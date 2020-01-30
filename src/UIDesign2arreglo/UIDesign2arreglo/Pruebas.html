@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+
+
+
+</body>
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCpWpphw-Fr3CPMiuEPvMxJER9wDadzqEk",
+        authDomain: "proyectolibres-141b2.firebaseapp.com",
+        databaseURL: "https://proyectolibres-141b2.firebaseio.com",
+        projectId: "proyectolibres-141b2",
+        storageBucket: "proyectolibres-141b2.appspot.com",
+        messagingSenderId: "519610788273",
+        appId: "1:519610788273:web:d3207f28739040dd09f590"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date + ' ' + time;
+    var etapa = "";
+
+    var jsonFeels = [{
+        "faceId": "546c5624-e391-462e-8b61-c9e80f374a41",
+        "faceRectangle": {
+            "top": 153,
+            "left": 214,
+            "width": 289,
+            "height": 246
+        },
+        "faceAttributes": {
+            "smile": 0,
+            "headPose": {
+                "pitch": -1.8,
+                "roll": -1.6,
+                "yaw": 7.1
+            },
+            "gender": "male",
+            "age": 26,
+            "facialHair": {
+                "moustache": 0.1,
+                "beard": 0.1,
+                "sideburns": 0.1
+            },
+            "glasses": "NoGlasses",
+            "emotion": {
+                "anger": 0,
+                "contempt": 0,
+                "disgust": 0,
+                "fear": 0,
+                "happiness": 0,
+                "neutral": 0.955,
+                "sadness": 0.045,
+                "surprise": 0
+            },
+            "blur": {
+                "blurLevel": "high",
+                "value": 0.93
+            },
+            "exposure": {
+                "exposureLevel": "goodExposure",
+                "value": 0.63
+            },
+            "noise": {
+                "noiseLevel": "low",
+                "value": 0
+            },
+            "makeup": {
+                "eyeMakeup": false,
+                "lipMakeup": false
+            },
+            "accessories": [],
+            "occlusion": {
+                "foreheadOccluded": false,
+                "eyeOccluded": false,
+                "mouthOccluded": false
+            },
+            "hair": {
+                "bald": 0.13,
+                "invisible": false,
+                "hairColor": [{
+                    "color": "black",
+                    "confidence": 0.99
+                }, {
+                    "color": "brown",
+                    "confidence": 0.78
+                }, {
+                    "color": "gray",
+                    "confidence": 0.49
+                }, {
+                    "color": "other",
+                    "confidence": 0.4
+                }, {
+                    "color": "blond",
+                    "confidence": 0.07
+                }, {
+                    "color": "red",
+                    "confidence": 0.03
+                }]
+            }
+        }
+    }, {
+        "fecha": "2020-1-23 8:19:48",
+        "Etapa": "Explorar"
+    }];
+
+    console.log(jsonFeels);
+    console.log(jsonFeels[0].faceAttributes.emotion);
+    var etapa = "explorar ";
+    db.collection(etapa + "users").add({
+            jsonFeels
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            console.log(docRef);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+</script>
+
+</html>

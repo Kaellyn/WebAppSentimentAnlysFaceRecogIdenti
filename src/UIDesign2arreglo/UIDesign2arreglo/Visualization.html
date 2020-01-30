@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Untitled</title>
+<script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}],'themeMap':[['Android','',['themes/android/android.css']],['BlackBerry','',['themes/blackberry/blackberry.css']],['iPad','',['themes/ipad/ipad.css']],['iPhone','',['themes/iphone/iphone.css']],['.*','',['themes/iphone/iphone.css']]],'mblThemeFiles':[],'mblLoadCompatPattern':''"></script>
+<script src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dijit/layout/ContentPane",
+  "shapes/Rectangle",
+  "shapes/Text",
+  "dijit/form/ComboBox",
+  "dijit/form/CheckBox"
+]);
+</script>
+<script type="text/javascript">
+    function showContentF() {
+        element = document.getElementById("felicidadP");
+        check = document.getElementById("chFelicidad");
+        
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+    function showContentE() {
+        element = document.getElementById("enfadoP");
+        check = document.getElementById("chEnfado");
+        
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+    function showContentS() {
+        element = document.getElementById("sorpresaP");
+        check = document.getElementById("chSorpresa");
+        
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+    function showContentT() {
+        element = document.getElementById("temorP");
+        check = document.getElementById("chTemor");
+        
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+</script>
+<style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "app.css";
+</style>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body data-maq-flow-layout="true" data-maq-comptype="desktop" class="claro" data-maq-ws="collapse" data-maq-appstates="{}" id="myapp">
+ <div data-dojo-type="dijit/layout/ContentPane" title="Pane" doLayout="false" style="left: -1px; top: 0px; height: 693.7118530273438px; width: 1496.4688720703125px;">
+   <div data-dojo-type="shapes/Rectangle" style="border-width: 3px; border-style: solid; border-color: black; height: 95px; background-color: rgb(179, 231, 166); position: absolute; z-index: 900; width: 1497.95px; left: 6.9375px; top: 5.98958px;">
+     <img src="Imagenes/logo-2.png" style="position: absolute; z-index: 900; width: 327.9653015136719px; height: 90.92361450195312px; left: -2.8819430154418946px; top: 1.9895851332092285px;"></img><span data-dojo-type="shapes/Text" style="position: absolute; z-index: 900; font-weight: bold; font-family: 'Comic Sans MS',cursive; font-size: 37px; left: 525.5659839826965px; top: 20.024306507720947px;">ORDENAR PARA RECICLAR</span><img src="Imagenes/recorte logo + wedo.png" style="width: 281.99310302734375px; position: absolute; z-index: 900; height: 93.9757080078125px; left: 1206.0521132666015px; top: 0.5034734922790527px;"></img>
+</div>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 20.22569465637207px; top: 130.80209350585938px;">
+     
+     
+    Taller:</h3>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 24px; left: 25.954862594604492px; top: 224.826416015625px;">
+     
+     
+    Estudiantes:</h3>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 24.27083396911621px; top: 179.89932250976562px;">
+     
+     
+    Curso:</h3>
+   <h3 style="font-family: 'Comic Sans MS',cursive; font-weight: bold; position: absolute; z-index: 900; font-size: 21px; left: 489.2187805175781px; top: 127.98611450195312px;">
+     
+     
+    Emociones:</h3>
+   <h3 style="font-family: 'Comic Sans MS',cursive; font-weight: bold; position: absolute; z-index: 900; font-size: 21px; left: 533.6111450195312px; top: 173.6979217529297px;">
+     
+     
+    Etapa:</h3>
+   <select data-dojo-type="dijit/form/ComboBox" value="Seleccionar Taller" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$" pageSize="Infinity" searchDelay="200" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 18px; left: 97.91667175292969px; top: 163.32640075683594px;">
+     <option value="Seleccionar Taller">
+       
+       
+      Seleccionar Taller</option>
+     <option value="Taller 0">
+       
+       
+      Taller 0</option>
+     <option value="Taller 1">
+       
+       
+      Taller 1</option>
+     <option value="Taller 2">
+       
+       
+      Taller 2</option>
+     <option value="Taller 3">
+       
+       
+      Taller 3</option>
+     <option value="Taller 4">
+       
+       
+      Taller 4</option>
+   </select>
+   <select data-dojo-type="dijit/form/ComboBox" value="Seleccionar Curso" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$" pageSize="Infinity" searchDelay="200" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 18px; left: 97.91667175292969px; top: 211.29515075683594px;">
+     <option value="Seleccionar Curso">
+       
+       
+      Seleccionar Curso</option>
+     <option value="Curso A">
+       
+       
+      Curso A</option>
+     <option value="Curso B">
+       
+       
+      Curso B</option>
+     <option value="Curso C">
+       
+       
+      Curso C</option>
+     <option value="Curso D">
+       
+       
+      Curso D</option>
+   </select>
+   <select id="orig" multiple="true" name="origen[]" size="8" style="height: 264.5999996494141px; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; left: 23.281251907348633px; top: 326.9895935058594px; font-size: 17px; width: 151.97917750585938px;">
+     <option value="Andres Narvaez">
+       
+       
+      Andres Narvaez</option>
+     <option value="Ismael Rivas">
+       
+       
+      Ismael Rivas</option>
+     <option value="Bezno Uchiha">
+       
+       
+      Bezno Uchiha</option>
+     <option value="Paul Guala">
+       
+       
+      Paul Guala</option>
+     <option value="Maria Perez">
+       
+       
+      Maria Perez</option>
+     <option value="Some Donuts">
+       
+       
+      Some Donuts</option>
+     <option value="Alison Baker">
+       
+       
+      Alison Baker</option>
+     <option value="Byron Ontuna">
+       
+       
+      Byron Ontuna</option>
+     <option value="Bryton Cantuna">
+       
+       
+      Bryton Cantuna</option>
+     <option value="Elver turizo">
+       
+       
+      Elver turizo</option>
+     <option value="Sasuke Uchiha">
+       
+       
+      Sasuke Uchiha</option>
+     <option value="Katty Egas">
+       
+       
+      Katty Egas</option>
+     <option value="Sharon Hechi">
+       
+       
+      Sharon Hechi</option>
+     <option value="Susana Campos">
+       
+       
+      Susana Campos</option>
+     <option value="Isabel Fuentes">
+       
+       
+      Isabel Fuentes</option>
+     <option value="Israel Patino">
+       
+       
+      Israel Patino</option>
+   </select>
+   <input readonly="true" type="button" value="&gt;" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; left: 188.74305725097656px; top: 361.97918701171875px; font-size: 14pt; width: 63.27430725097656px;" class="pasar izq"></input>
+   <input readonly="true" type="button" value="&lt;" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 14pt; width: 61.72916793823242px; left: 190.39931917190552px; top: 405.9097442626953px;" class="quitar der"></input>
+   <input readonly="true" type="button" value="&gt;&gt;" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 14pt; width: 63.65277862548828px; left: 188.7152829170227px; top: 451.39585876464844px;" class="pasartodos izq"></input>
+   <input readonly="true" type="button" value="&lt;&lt;" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; left: 188.73265075683594px; top: 494.9410095214844px; font-size: 14pt; width: 63.690975189208984px;" class="quitartodos der"></input>
+   <select id="desti" multiple="true" name="destino[]" size="8" style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; height: 263.1631985019531px; left: 272.94097566604614px; top: 329.7743225097656px;"></select>
+   <div data-dojo-type="dijit/layout/ContentPane" id="emocionPanel" title="Pane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" style="border: 1px solid black; width: 978.8472900390625px; position: absolute; z-index: 900; left: 487.0660095214844px; top: 272.97918701171875px; height: 407.8090420078125px;">
+
+   <div id="felicidadP" style="display: none; width: 966.170166015625px; height: 216.1736297607422px;">
+    <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+      Felicidad</h3>
+    <br/>
+    <img src="Imagenes/feel 1.png" style="height: 144.00000762939453px; width: 958.9688110351562px;"></img>
+  </div>
+   <div id="enfadoP" style="display: none;">
+  <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+      Enfado</h3>
+   <img src="Imagenes/feel 2.png" style="width: 924.9618530273438px; height: 145.375px;"></img>
+   </div>
+   <div id="sorpresaP" style="display: none;">
+   <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+      Sorpresa</h3>
+   <img src="Imagenes/feel 3.jpeg" style="width: 930.9618530273438px; height: 143.77084350585938px;"></img>
+   </div>
+   <div id="temorP" style="display: none; width: 962px; height: 104px;">
+   <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+      Temor</h3>
+   <img src="Imagenes/sorpresa.jpeg" style="width: 928.9618530273438px; height: 157.95834350585938px;"></img>
+    </div>
+
+         <p class="clear"></p>
+         <script src="xdFile.js"></script>
+    </div>
+
+   <h2 style="font-family: 'Comic Sans MS',cursive; font-weight: bold; position: absolute; z-index: 900; font-size: 25px; left: 5.8229169845581055px; top: 83.76736450195312px;">
+     Bienvenido/a Maria</h2>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chFelicidad" name="checkF" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 706.4063110351562px; top: 166.74305725097656px;" onchange="javascript:showContentF()"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 610.74658203125px; top: 126.21528625488281px;">
+     Felicidad</h3>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 730.3472290039062px; top: 126.44097900390625px;">
+     Enfado</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chEnfado" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 806.3021240234375px; top: 165.73611450195312px;" onchange="javascript:showContentE()"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 829.7916870117188px; top: 125.6944580078125px;">
+     Sorpresa</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chSorpresa" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 928.1597900390625px; top: 165.0416717529297px;" onchange="javascript:showContentS()"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 951.7361450195312px; top: 125.19097900390625px;">
+     Temor</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chTemor" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 1022.4479370117188px; top: 165.1632080078125px;" onchange="javascript:showContentT()"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 613.5416870117188px; top: 173.21182250976562px;">
+     Crear</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chCrear" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 677.4479370117188px; top: 212.99307250976562px;"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 703.107666015625px; top: 173.05557250976562px;">
+     Explorar</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chExplorar" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 795.7291870117188px; top: 212.6979217529297px;"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 820.2431030273438px; top: 171.45834350585938px;">
+     Compartir</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chCompartir" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 928.24658203125px; top: 211.69097900390625px;"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 1045.8854370117188px; top: 125.36805725097656px;">
+     Tristeza</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 1138.8611450195312px; top: 164.87847900390625px;" onchange="javascript:showContentT()"></input>
+   <h3 style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 1161.916748046875px; top: 124.0382080078125px;">
+     Verg&uuml;enza</h3>
+   <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 1271.9618530273438px; top: 164.8507080078125px;" onchange="javascript:showContentT()"></input>
+   <button style="width: 110.71875762939453px; font-family: 'Comic Sans MS',cursive; font-weight: bold; background-color: rgb(179, 231, 166); position: absolute; z-index: 900; left: 1396.0660400390625px; top: 114.91320037841797px;" onclick="location.href='Login2.html'">
+     Cerrar Sesión</button>
+ </div>
+   </body>
+ </html>

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Untitled</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <script type="text/javascript" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}],'themeMap':[['Android','',['themes/android/android.css']],['BlackBerry','',['themes/blackberry/blackberry.css']],['iPad','',['themes/ipad/ipad.css']],['iPhone','',['themes/iphone/iphone.css']],['.*','',['themes/iphone/iphone.css']]],'mblThemeFiles':[],'mblLoadCompatPattern':''"
+        src="lib/dojo/dojo/dojo.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript">
+        require([
+            "dijit/dijit",
+            "dojo/parser",
+            "maqetta/space",
+            "maqetta/AppStates",
+            "dijit/layout/ContentPane",
+            "shapes/Rectangle",
+            "shapes/Text",
+            "dijit/layout/TabContainer",
+            "dijit/MenuBar",
+            "dijit/PopupMenuBarItem",
+            "dijit/MenuItem",
+            "dijit/Menu",
+            "dojox/io/xhrScriptPlugin",
+            "dojo/data/ItemFileReadStore",
+            "gridx/Grid",
+            "gridx/core/model/cache/Async",
+            "dojox/data/CsvStore",
+            "dijit/form/MultiSelect",
+            "dijit/form/DropDownButton",
+            "dijit/form/ComboBox",
+            "dijit/form/Textarea",
+            "dijit/form/TextBox",
+            "dijit/form/VerticalSlider",
+            "dijit/form/VerticalRule",
+            "dijit/form/VerticalRuleLabels",
+            "dijit/form/Button",
+            "dijit/form/CheckBox"
+        ]);
+    </script>
+
+
+    <script type="text/javascript">
+        function showContentE1() {
+            element = document.getElementById("enfadoP1");
+            check = document.getElementById("chEnfado1");
+
+            if (check.checked) {
+                element.style.display = 'block';
+
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function showContentS1() {
+            element = document.getElementById("sorpresaP1");
+            check = document.getElementById("chSorpresa1");
+
+            if (check.checked) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function showContentT1() {
+            element = document.getElementById("temorP1");
+            check = document.getElementById("chTemor1");
+
+            if (check.checked) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function showContentF2() {
+            element = document.getElementById("felicidadP2");
+            check = document.getElementById("chFelicidad2");
+
+            if (check.checked) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function showContentE2() {
+            element = document.getElementById("enfadoP2");
+            check = document.getElementById("chEnfado2");
+
+            if (check.checked) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function showContentS2() {
+            element = document.getElementById("sorpresaP2");
+            check = document.getElementById("chSorpresa2");
+
+            if (check.checked) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        function showContentT2() {
+            element = document.getElementById("temorP2");
+            check = document.getElementById("chTemor2");
+
+            if (check.checked) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+    </script>
+
+
+
+    <style>
+        @import "themes/claro/document.css";
+        @import "themes/claro/claro.css";
+        @import "lib/dojo/gridx/resources/claro/Gridx.css";
+        @import "lib/dojo/gridx/resources/claro/Gridx_rtl.css";
+        @import "app.css";
+    </style>
+    <script type="text/javascript" src="app.js"></script>
+
+
+
+</head>
+
+<body data-maq-flow-layout="true" data-maq-comptype="desktop" class="claro" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}">
+
+
+
+    <div data-dojo-type="dijit/layout/ContentPane" title="Pane" doLayout="false" style="width: 1498.6112060546875px; height: 711.6354370117188px; left: 0px; top: 1px;">
+        <div data-dojo-type="shapes/Rectangle" style="border-width: 3px; border-style: solid; border-color: black; position: absolute; z-index: 900; left: 3px; top: 1px; height: 95px; width: 1499.98px; background-color: rgb(179, 231, 166);">
+            <img src="Imagenes/logo-2.png" style="position: absolute; z-index: 900; width: 327.9653015136719px; height: 90.92361450195312px; left: -5.972221164093018px; top: 2.039932938232422px;"></img>
+            <span data-dojo-type="shapes/Text" style="position: absolute; z-index: 900; font-weight: bold; font-family: 'Comic Sans MS',cursive; font-size: 37px; left: 539.1736528593444px; top: 19.583335252418518px;">ORDENAR
+        PARA RECICLAR</span>
+        </div>
+        <img src="Imagenes/recorte logo + wedo.png" style="position: absolute; z-index: 900; height: 82.96528625488281px; width: 244.95834350585938px; left: 1255.7777862548828px; top: 10.000001311302185px;"></img>
+        <span data-dojo-type="dijit/layout/TabContainer" id="pestana" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController" style="min-width: 1em; min-height: 1em; position: absolute; z-index: 900; width: 1494.8751220703125px; height: 542.9861450195312px; left: 5.8332977294921875px; top: 157.96320037841798px;">
+      <div data-dojo-type="dijit/layout/ContentPane" title="Administrador" extractContent="false" preventCache="false"
+        preload="false" refreshOnShow="false" doLayout="true" closable="false">
+        <img src="Imagenes/cronometro.jpg"
+          style="position: absolute; z-index: 900; width: 57.951393127441406px; height: 50.96875px; left: 167.17015075683594px; top: -188.9757080078125px;"></img>
+        <h2
+          style="position: absolute; z-index: 900; font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 24PX; font-style: italic; text-decoration: none; color: #0c0c0c; left: 17.291667461395264px; top: 27.625px;">
+          Administrador C R U D</h2>
+        <button
+          style="position: absolute; z-index: 900; font-family: 'Comic Sans MS',cursive; left: 12.343750953674316px; top: 138.35415649414062px; background-color: rgb(179, 231, 166); font-size: 24PX; width: 274.5798645019531px;">
+          PROFESOR</button>
+        <button
+          style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; left: 12.343750953674316px; top: 195.35415649414062px; background-color: rgb(179, 231, 166); font-size: 24Px; width: 273.5625px;">
+          PULSERA</button>
+        <button
+          style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; left: 12.343750953674316px; top: 255.4861297607422px; background-color: rgb(179, 231, 166); font-size: 24Px; width: 273.5555725097656px;">
+          ADMINISTRADOR</button>
+        <div data-dojo-type="dijit/layout/ContentPane" title="Pane" extractContent="false" preventCache="false"
+          preload="false" refreshOnShow="false" doLayout="true"
+          style="border: 1px solid black; position: absolute; z-index: 900; width: 1025.87158203125px; height: 393.90972900390625px; left: 388.0173645019531px; top: 67.46527481079102px;">
+          <h2 style="position: absolute; z-index: 900; left: 140.11458206176758px; top: -60.986114501953125px;">
+            Header</h2>
+          <h2 style="position: absolute; z-index: 900; left: 244.01041662693024px; top: -75.99653625488281px;">
+            CRUD</h2>
+        </div>
+        <button
+          style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-size: 24Px; left: 12.34375px; top: 320.02432441711426px; width: 271.5798645019531px;">
+          TALLER</button>
+        <h2
+          style="font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 37px; position: absolute; z-index: 900; left: 831.7986755371094px; top: 198.50349807739258px;">
+          C R U D</h2>
+      </div>
+      <div data-dojo-type="dijit/layout/ContentPane" title="Fases" extractContent="false" preventCache="false"
+        preload="false" refreshOnShow="false" doLayout="true" closable="false">
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; left: 20.010417938232422px; top: -15.09375px; font-weight: bold;">
+          Taller:</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; left: 20.017362594604492px; top: 70.08680820465088px; font-size: 23px; font-weight: bold;">
+          Estudiantes:</h3>
+        <div data-dojo-type="dijit/layout/ContentPane" title="Explorar" extractContent="false" preventCache="false"
+          preload="false" refreshOnShow="false" doLayout="true">
+          <button onclick="iniciarTiempo()"
+            style="position: absolute; z-index: 900; font-family: 'Comic Sans MS',cursive; background-color: #b3e7a6; width: 108.97917175292969px; height: 56.74652862548828px; font-size: 21px; left: 895.2604751586914px; top: 61.55556106567383px;">
+            Iniciar</button>
+          <button onclick="detenerTiempo()"
+            style="position: absolute; z-index: 900; font-family: 'Comic Sans MS',cursive; background-color: #b3e7a6; width: 104.53472900390625px; height: 56.704864501953125px; font-size: 21px; left: 1068.5417175292969px; top: 60.56596374511719px;">
+            Parar</button>
+        </div>
+
+        <!--Nueva funcion-->
+
+        <script>
+          var puntero
+          function iniciarTiempo() {
+            var etapaActual;
+
+            var res = document.getElementById("chExplorar").checked;
+            
+
+
+            var inicio = new Date();
+            var horaInicio = inicio.getDate() + '' + (inicio.getMonth() - 1) + '-' + inicio.getFullYear() + '-' + inicio.getHours() + ':' + inicio.getMinutes() + ':' + inicio.getSeconds();
+            console.log(horaInicio);
+            puntero = setInterval(inicializarTodo, 20000);
+          }
+
+          function detenerTiempo() {
+
+
+            var fin = new Date();
+            var horaFin = fin.getDate() + '' + (fin.getMonth() - 1) + '-' + fin.getFullYear() + '-' + fin.getHours() + ':' + fin.getMinutes() + ':' + fin.getSeconds();
+           
+            clearInterval(puntero);
+          }
+
+
+
+        </script>
+
+
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 21px; font-weight: bold; left: 25.625001907348633px; top: 22.034713745117188px;">
+          Curso:</h3>
+        <select data-dojo-type="dijit/form/ComboBox" value="Seleccionar Taller" intermediateChanges="false" trim="false"
+          uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$" pageSize="Infinity"
+          searchDelay="200"
+          style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 15px; left: 105.73958778381348px; top: 19.305557250976562px;">
+          <option value="Seleccionar Taller">
+            Seleccionar Taller</option>
+          <option value="Taller 0">
+            Taller 0</option>
+          <option value="Taller 1">
+            Taller 1</option>
+          <option value="Taller 2">
+            Taller 2</option>
+          <option value="Taller 3">
+            Taller 3</option>
+          <option value="Taller 4">
+            Taller 4</option>
+        </select>
+        <select data-dojo-type="dijit/form/ComboBox" value="Seleccionar Curso" intermediateChanges="false" trim="false"
+          uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$" pageSize="Infinity"
+          searchDelay="200"
+          style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 15px; left: 107.1805591583252px; top: 58.454864501953125px;">
+          <option value="Seleccionar Curso">
+            Seleccionar Curso</option>
+          <option value="Curso A">
+            Curso A</option>
+          <option value="Curso B">
+            Curso B</option>
+          <option value="Curso C">
+            Curso C</option>
+          <option value="Curso D">
+            Curso D</option>
+        </select>
+        <select id="ori" multiple="true" name="origen[]" size="8"
+          style="height: 264.5999996494141px; position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 17px; left: 20.017361164093018px; top: 171.67708587646484px; width: 153.04514125097657px;">
+          <option value="Andres Narvaez">
+            Andres Narvaez</option>
+          <option value="Ismael Rivas">
+            Ismael Rivas</option>
+          <option value="Bezno Uchiha">
+            Bezno Uchiha</option>
+          <option value="Paul Guala">
+            Paul Guala</option>
+          <option value="Maria Perez">
+            Maria Perez</option>
+          <option value="Some Donuts">
+            Some Donuts</option>
+          <option value="Alison Baker">
+            Alison Baker</option>
+          <option value="Byron Ontuna">
+            Byron Ontuna</option>
+          <option value="Bryton Cantuna">
+            Bryton Cantuna</option>
+          <option value="Elver turizo">
+            Elver turizo</option>
+          <option value="Sasuke Uchiha">
+            Sasuke Uchiha</option>
+          <option value="Katty Egas">
+            Katty Egas</option>
+          <option value="Sharon Hechi">
+            Sharon Hechi</option>
+          <option value="Susana Campos">
+            Susana Campos</option>
+          <option value="Isabel FuentesIsrael Patino">
+            Isabel FuentesIsrael Patino</option>
+        </select>
+        <!--<div data-dojo-type="dijit/layout/ContentPane" id="emocionPane1" title="Pane" extractContent="false"
+          preventCache="false" preload="false" refreshOnShow="false" doLayout="true"
+          style="border: 1px solid black; height: 328.9444580078125px; width: 978.8472900390625px; position: absolute; z-index: 900; left: 383.98267221450806px; top: 145.81597900390625px;">
+          <div id="felicidadP1" style="display: none; width: 966.170166015625px; height: 216.1736297607422px;">
+            <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+              Felicidad</h3>
+            <br></br>
+            <img src="Imagenes/feel 1.png" style="height: 144.00000762939453px; width: 958.9688110351562px;"></img>
+          </div>
+          <div id="enfadoP1" style="display: none;">
+            <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+              Enfado</h3>
+            <img src="Imagenes/feel 2.png" style="width: 924.9618530273438px; height: 145.375px;"></img>
+          </div>
+          <div id="sorpresaP1" style="display: none;">
+            <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+              Sorpresa</h3>
+            <img src="Imagenes/feel 3.jpeg" style="width: 930.9618530273438px; height: 143.77084350585938px;"></img>
+          </div>
+          <div id="temorP1" style="display: none; width: 962px; height: 104px;">
+            <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+              Temor</h3>
+            <img src="Imagenes/sorpresa.jpeg" style="width: 928.9618530273438px; height: 157.95834350585938px;"></img>
+          </div>
+        </div>-->
+        <div data-dojo-type="dijit/layout/ContentPane" id="emocionPane1" title="Pane" extractContent="false"
+        preventCache="false" preload="false" refreshOnShow="false" doLayout="true"
+        style="border: 1px solid black; height: 328.9444580078125px; width: 978.8472900390625px; position: absolute; z-index: 900; left: 383.98267221450806px; top: 145.81597900390625px;">
+          <div style="width: 100%; height: 100%;">
+              
+              <canvas id="myChart"></canvas>
+          </div>
+      </div>
+        <input readonly="true" type="button" value="&gt;"
+          style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; width: 42.295143127441406px; top: 217.03125px; left: 181.55209350585938px;"
+          class="pasar izq"></input>
+        <input readonly="true" type="button" value="&lt;"
+          style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; width: 42.10416793823242px; top: 248.69793701171875px; left: 181.72570037841797px;"
+          class="quitar der"></input>
+        <input readonly="true" type="button" value="&gt;&gt;"
+          style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; width: 41.62152862548828px; top: 282.0486145019531px; left: 182.15972900390625px;"
+          class="pasartodos izq"></input>
+        <input readonly="true" type="button" value="&lt;&lt;"
+          style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; width: 42.66666793823242px; top: 315.8680725097656px; left: 182.6979217529297px;"
+          class="quitartodos der"></input>
+        <select multiple="true" name="destino[]" size="8"
+          style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; height: 261.159750015625px; top: 171.66668701171875px; left: 229.95486450195312px;"></select>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 21px; position: absolute; z-index: 900; left: 381.84725189208984px; top: -17.524307250976562px;">
+          Emociones:</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 21px; position: absolute; z-index: 900; left: 426.23960876464844px; top: 27.510421752929688px;">
+          Etapa:</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 503.3750305175781px; top: -19.3125px;">
+          Felicidad</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 622.9757385253906px; top: -19.086807250976562px;">
+          Enfado</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 722.4201965332031px; top: -19.78125px;">
+          Sorpresa</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 844.3646545410156px; top: -20.319442749023438px;">
+          Temor</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 506.17018127441406px; top: 27.041671752929688px;">
+          Crear</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 595.7361450195312px; top: 26.885421752929688px;">
+          Explorar</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 712.87158203125px; top: 25.236114501953125px;">
+          Compartir</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 938.5139465332031px; top: -20.163192749023438px;">
+          Tristeza</h3>
+        <h3
+          style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 1054.5382385253906px; top: -21.465286254882812px;">
+          Neutral</h3>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chFelicidad1" name="checkF"
+          intermediateChanges="false" iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 599.0347595214844px; top: 21.336807250976562px;"
+          onchange="javascript:showContentF1()"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chEnfado1" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 698.9306030273438px; top: 20.329864501953125px;"
+          onchange="javascript:showContentE1()"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chSorpresa1" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 820.7882385253906px; top: 19.618057250976562px;"
+          onchange="javascript:showContentS1()"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chTemor1" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 915.0764465332031px; top: 19.774307250976562px;"
+          onchange="javascript:showContentT1()"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chCrear" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 570.076416015625px; top: 67.65625px;"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chExplorar" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 688.3576965332031px; top: 67.36111450195312px;"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chCompartir" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 820.8750305175781px; top: 66.33680725097656px;"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chTristeza" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 1031.4826965332031px; top: 19.461807250976562px;"
+          onchange="javascript:showContentTr()"></input>
+        <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chVerguenza" intermediateChanges="false"
+          iconClass="dijitNoIcon"
+          style="position: absolute; z-index: 900; left: 1164.5903625488281px; top: 19.461807250976562px;"
+          onchange="javascript:showContentV()"></input>
+        <h2
+          style="font-weight: bold; font-family: 'Comic Sans MS',cursive; position: absolute; z-index: 900; font-size: 23px; font-style: italic; left: 382.95139503479004px; top: 88.7257080078125px;">
+          Medidor de emociones:</h2>
+        <img src="Imagenes/cronometroxdddd.jpg"
+          style="width: 198.9479217529297px; height: 97.97570037841797px; position: absolute; z-index: 900; left: 1242.2640075683594px; top: 15.173614501953125px;"></img>
+      </div>
+
+      <!--Anadiendo la nuevo pestana-->
+
+      <div data-dojo-type="dijit/layout/ContentPane" title="Toma de datos" extractContent="false" preventCache="false"
+        preload="false" refreshOnShow="false" doLayout="true" closable="false">
+
+        <div class="video-wrap">
+          <video id="video" playsinline autoplay></video>
+        </div>
+
+        <div id="wrapper" style="width:1020px; display:table;">
+          <div id="jsonOutput" style="width:800px; display:table-cell;">
+            Respuesta API Microsoft::<br><br>
+            <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+          </div>
+          <div id="imageDiv" style="width:420px; display:table-cell;">
+            Imagen fuente:<br><br>
+
+            <canvas id="canvas" width="580" height="400"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <div data-dojo-type="dijit/layout/ContentPane" title="Visualizaci&amp;oacute;n" extractContent="false"
+        preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="true" closable="false"
+        style="border: 1px solid black; height: 328.9444580078125px; width: 978.8472900390625px; z-index: 900;">
+        <div data-dojo-type="dijit/layout/ContentPane" title="S" extractContent="false" preventCache="false"
+          preload="false" refreshOnShow="false" doLayout="true" style="width: 1444px; height: 463px;">
+          <div data-dojo-type="dijit/layout/ContentPane" title="Pane" extractContent="false" preventCache="false"
+            preload="false" refreshOnShow="false" doLayout="true"
+            style="position: absolute; z-index: 900; width: 999.9931640625px; height: 268.9687805175781px; left: 803.6805725097656px; top: 251.6666717529297px;">
+          </div>
+          <!--<div data-dojo-type="dijit/layout/ContentPane" id="emocionPane2" title="Pane" extractContent="false"
+            preventCache="false" preload="false" refreshOnShow="false" doLayout="true"
+            style="border: 1px solid black; position: absolute; z-index: 900; height: 328.9444580078125px; width: 978.8472900390625px; left: 383.98267221450806px; top: 145.81597900390625px;">
+            <div id="felicidadP2" style="display: none; width: 966.170166015625px; height: 216.1736297607422px;">
+              <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+                Felicidad</h3>
+              <br></br>
+              <img src="Imagenes/feel 1.png" style="height: 144.00000762939453px; width: 958.9688110351562px;"></img>
+            </div>
+            <div id="enfadoP2" style="display: none;">
+              <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+                Enfado</h3>
+              <img src="Imagenes/feel 2.png" style="width: 924.9618530273438px; height: 145.375px;"></img>
+            </div>
+            <div id="sorpresaP2" style="display: none;">
+              <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+                Sorpresa</h3>
+              <img src="Imagenes/feel 3.jpeg" style="width: 930.9618530273438px; height: 143.77084350585938px;"></img>
+            </div>
+            <div id="temorP2" style="display: none; width: 962px; height: 104px;">
+              <h3 style="color: #2e9e45; font-family: 'Comic Sans MS',cursive; font-size: 21px;">
+                Temor</h3>
+              <img src="Imagenes/sorpresa.jpeg" style="width: 928.9618530273438px; height: 157.95834350585938px;"></img>
+            </div>
+          </div>-->
+          <form method="post">
+            <div>
+              <select id="origen" multiple="true" name="origen[]" size="8"
+                style="position: absolute; z-index: 900; height: 264.5999996494141px; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 17px; width: 153.94791987646485px; left: 20.017361164093018px; top: 171.67708587646484px;">
+                <option value="Andres Narvaez">
+                  Andres Narvaez</option>
+                <option value="Ismael Rivas" style="left: 9.691162109470852e-7px; top: 25.322917px;">
+                  Ismael Rivas</option>
+                <option value="Bezno Uchiha" style="left: 1.0000009691162108px; top: 37.53473950976562px;">
+                  Bezno Uchiha</option>
+                <option value="Paul Guala">
+                  Paul Guala</option>
+                <option value="Maria Perez">
+                  Maria Perez</option>
+                <option value="Some Donuts">
+                  Some Donuts</option>
+                <option value="Alison Baker">
+                  Alison Baker</option>
+                <option value="Byron Ontuna">
+                  Byron Ontuna</option>
+                <option value="Bryton Cantuna">
+                  Bryton Cantuna</option>
+                <option value="Elver turizo">
+                  Elver turizo</option>
+                <option value="Sasuke Uchiha">
+                  Sasuke Uchiha</option>
+                <option value="Katty Egas">
+                  Katty Egas</option>
+                <option value="Sharon Hechi">
+                  Sharon Hechi</option>
+                <option value="Susana Campos">
+                  Susana Campos</option>
+                <option value="Isabel Fuentes">
+                  Isabel Fuentes</option>
+                <option value="Israel Patino">
+                  Israel Patino</option>
+              </select>
+            </div>
+            <div>
+              <br></br>
+              <div>
+                <select id="destino" multiple="true" name="destino[]" size="8"
+                  style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 17px; height: 265.22917750585935px; left: 229.95486450195312px; top: 171.66668701171875px;"></select>
+              </div>
+              <p class="clear"></p>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; font-weight: bold; position: absolute; z-index: 900; left: 19.885417938232422px; top: -14.78125px;">
+                Taller:</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 23px; font-weight: bold; position: absolute; z-index: 900; left: 19.90277862548828px; top: 69.9617919921875px;">
+                Estudiantes:</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; font-weight: bold; position: absolute; z-index: 900; left: 25.49305534362793px; top: 21.74652099609375px;">
+                Curso:</h3>
+              <select data-dojo-type="dijit/form/ComboBox" value="Seleccionar Taller" intermediateChanges="false"
+                trim="false" uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$"
+                pageSize="Infinity" searchDelay="200"
+                style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 15px; position: absolute; z-index: 900; left: 105.61458778381348px; top: 19.427078247070312px;">
+                <option value="Seleccionar Taller">
+                  Seleccionar Taller</option>
+                <option value="Taller 0">
+                  Taller 0</option>
+                <option value="Taller 1">
+                  Taller 1</option>
+                <option value="Taller 2">
+                  Taller 2</option>
+                <option value="Taller 3">
+                  Taller 3</option>
+                <option value="Taller 4">
+                  Taller 4</option>
+              </select>
+              <select data-dojo-type="dijit/form/ComboBox" value="Seleccionar Curso" intermediateChanges="false"
+                trim="false" uppercase="false" lowercase="false" propercase="false" invalidMessage="$_unset_$"
+                pageSize="Infinity" searchDelay="200"
+                style="background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; font-size: 15px; position: absolute; z-index: 900; left: 107.0555591583252px; top: 58.66319274902344px;">
+                <option value="Seleccionar Curso">
+                  Seleccionar Curso</option>
+                <option value="Curso A">
+                  Curso A</option>
+                <option value="Curso B">
+                  Curso B</option>
+                <option value="Curso C">
+                  Curso C</option>
+                <option value="Curso D">
+                  Curso D</option>
+              </select>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 21px; position: absolute; z-index: 900; left: 381.72571754455566px; top: -17.15972900390625px;">
+                Emociones:</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 21px; position: absolute; z-index: 900; left: 426.1180820465088px; top: 27.21527099609375px;">
+                Etapa:</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 503.25351905822754px; top: -18.947921752929688px;">
+                Felicidad</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 622.8541660308838px; top: -18.72222900390625px;">
+                Enfado</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 722.2986240386963px; top: -19.416671752929688px;">
+                Sorpresa</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 844.2430820465088px; top: -19.9375px;">
+                Temor</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 506.0486240386963px; top: 26.74652099609375px;">
+                Crear</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 595.6146030426025px; top: 26.59027099609375px;">
+                Explorar</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 712.7500400543213px; top: 24.940963745117188px;">
+                Compartir</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 938.3924350738525px; top: -19.78125px;">
+                Tristeza</h3>
+              <h3
+                style="font-family: 'Comic Sans MS',cursive; font-size: 21px; position: absolute; z-index: 900; left: 1054.4166660308838px; top: -21.100692749023438px;">
+                Vergüenza</h3>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chFelicidad2" name="checkF"
+                intermediateChanges="false" iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 598.9132480621338px; top: 21.475692749023438px;"
+                onchange="javascript:showContentF2()"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chEnfado2" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 698.809061050415px; top: 20.538192749023438px;"
+                onchange="javascript:showContentE2()"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chSorpresa2" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 820.66672706604px; top: 19.739578247070312px;"
+                onchange="javascript:showContentS2()"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" id="chTemor2" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 914.9549350738525px; top: 19.913192749023438px;"
+                onchange="javascript:showContentT2()"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 569.9548740386963px; top: 67.8125px;"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 688.2361240386963px; top: 67.55209350585938px;"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 820.7535190582275px; top: 66.5625px;"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 1031.3611240386963px; top: 19.600692749023438px;"
+                onchange="javascript:showContentT()"></input>
+              <input type="checkbox" data-dojo-type="dijit/form/CheckBox" intermediateChanges="false"
+                iconClass="dijitNoIcon"
+                style="position: absolute; z-index: 900; left: 1164.4687900543213px; top: 19.600692749023438px;"
+                onchange="javascript:showContentT()"></input>
+            </div>
+          </form>
+          <input readonly="true" type="button" value="&gt;"
+            style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; width: 39.295143127441406px; left: 181.55209350585938px; top: 217.03125px;"
+            class="pasar izq"></input>
+          <input readonly="true" type="button" value="&lt;"
+            style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; left: 181.72570037841797px; top: 248.69793701171875px; width: 39.052085876464844px;"
+            class="quitar der"></input>
+          <input readonly="true" type="button" value="&gt;&gt;"
+            style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; width: 39.64930725097656px; left: 182.15972900390625px; top: 282.0486145019531px;"
+            class="pasartodos izq"></input>
+          <input readonly="true" type="button" value="&lt;&lt;"
+            style="position: absolute; z-index: 900; background-color: rgb(179, 231, 166); font-family: 'Comic Sans MS',cursive; width: 40.68402862548828px; left: 182.6979217529297px; top: 315.8680725097656px;"
+            class="quitartodos der"></input>
+          <h2
+            style="font-weight: bold; font-family: 'Comic Sans MS',cursive; font-size: 23px; font-style: italic; position: absolute; z-index: 900; left: 382.95139503479004px; top: 88.7257080078125px;">
+            Medidor de emociones:</h2>
+        </div>
+      </div>
+    </span>
+        <div data-dojo-type="dijit/layout/ContentPane" title="Visualization" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+        </div>
+        <p class="clear"></p>
+        <script src="xdFile.js"></script>
+        <h2 style="font-family: 'Comic Sans MS',cursive; font-weight: bold; font-size: 28px; position: absolute; z-index: 900; left: 2.9861111640930176px; top: 73.18611450195313px;">
+
+            Bienvenido Administrador/a</h2>
+        <button id="cerrar" style="position: absolute; z-index: 900; width: 110.71875762939453px; font-family: 'Comic Sans MS',cursive; font-weight: bold; background-color: rgb(179, 231, 166); left: 1395.2257385253906px; top: 112.74305725097656px;" onclick="location.href='Login2.html'">
+      Cerrar Sesión</button>
+        <script src="app2.js"></script>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    function processImage(urlImage) {
+        // Replace <Subscription Key> with your valid subscription key.
+        var subscriptionKey = "f405e33538c94a0688464628fc17f0d7";
+        var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+
+        // Request parameters.
+        var params = {
+            "returnFaceId": "true",
+            "returnFaceLandmarks": "false",
+            "returnFaceAttributes": "age,gender,headPose,smile,facialHair,glasses,emotion," +
+                "hair,makeup,occlusion,accessories,blur,exposure,noise"
+
+        };
+
+        //var sourceImageUrl = document.getElementById("inputImage").value;
+        var sourceImageUrl = urlImage;
+        //console.log(sourceImageUrl);
+        //document.querySelector("#sourceImage").src = sourceImageUrl;
+
+        $.ajax({
+            url: uriBase + "?" + $.param(params),
+
+            // Request headers.
+            beforeSend: function(xhrObj) {
+                xhrObj.setRequestHeader("Content-Type", "application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+            },
+
+            type: "POST",
+
+            // Request body.
+            data: '{"url": ' + '"' + sourceImageUrl + '"}',
+        })
+
+        .done(function(data) {
+            // Show formatted JSON on webpage.
+            console.log("Filings");
+            console.log(data);
+            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+
+            subirAFireBase(data);
+        })
+
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            // Display error message.
+            var errorString = (errorThrown === "") ?
+                "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+            errorString += (jqXHR.responseText === "") ?
+                "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+                jQuery.parseJSON(jqXHR.responseText).message :
+                jQuery.parseJSON(jqXHR.responseText).error.message;
+            alert(errorString);
+        });
+    };
+</script>
+
+<script src="bower_components/canvas-to-blob/js/canvas-to-blob.min.js"></script>
+<script>
+    function subirAFireBase(jsonFeels) {
+
+        console.log(jsonFeels);
+
+        var db = firebase.firestore();
+
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + ' ' + time;
+        var etapa = "";
+        if (document.getElementById('chCrear').checked) {
+            etapa = "Crear";
+        }
+        if (document.getElementById('chExplorar').checked) {
+            etapa = "Explorar";
+        }
+        if (document.getElementById('chCompartir').checked) {
+            etapa = "Compartir";
+        }
+
+
+        jsonFeels.push({
+            "fecha": dateTime,
+            "Etapa": etapa
+        });
+
+        console.log(jsonFeels);
+
+        db.collection("JuevesD" + etapa).add({
+                jsonFeels
+
+
+            })
+            .then(function(docRef) {
+                console.log(jsonFeels);
+                getData(jsonFeels);
+            })
+            .catch(function(error) {
+
+                console.error("Error adding document: ", error);
+            });
+    }
+</script>
+<script>
+    var c = 0;
+
+    function myMethod(urlImage) {
+
+        var varImage = urlImage;
+
+        document.getElementById("inputImage").value = varImage;
+        processImage();
+        c++;
+    }
+</script>
+<script id="captura">
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const snap = document.getElementById("snap");
+    const errorMsgElement = document.querySelector('span#errorMsg');
+    const stram = "";
+
+    const constraints = {
+        audio: false,
+        video: {
+            width: 160,
+            height: 120
+        }
+    };
+
+
+
+    // Access webcam
+    async function init() {
+        try {
+            stream = await navigator.mediaDevices.getUserMedia(constraints);
+            handleSuccess(stream);
+            console.log(stream);
+        } catch (e) {
+            errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+        }
+    }
+
+    // Success
+    function handleSuccess(stream) {
+        window.stream = stream;
+        video.srcObject = stream;
+        console.log(stream);
+    }
+
+
+    // Load init
+    init();
+
+    var context = canvas.getContext('2d');
+
+    function inicializarTodo() {
+        context.drawImage(video, 0, 0, 640, 480);
+        let foto = canvas.toDataURL(); //Esta es la foto, en base 64
+
+
+        var hoy = new Date();
+        var fecha = hoy.getDate() + (hoy.getMonth() - 1) + '-' + hoy.getFullYear() + '-' + hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
+        let enlace = document.createElement('a'); // Crear un <a>
+        enlace.download = " Tomada:" + fecha + ".jpg";
+        enlace.href = foto;
+        //enlace.click();
+
+
+
+        var base64result = foto.split(',')[1];
+        var binary = fixBinary(window.atob(base64result));
+        var the_file = new Blob([binary], {
+            type: 'image/png'
+        });
+        var imagen_firma = new File([the_file], 'imagen_firma.png', {
+            type: 'image/png'
+        });
+
+
+        var storage = firebase.storage();
+
+        uploadTask = firebase.storage().ref().child("fotoTomada" + fecha + ".jpg").put(imagen_firma);
+        uploadTask.on('state_changed', function(snapshot) {
+
+
+        }, function(error) {
+            console.log(error);
+        }, function() {
+            console.log("Archivo subido a firebase");
+
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                console.log("File available at", downloadURL);
+                processImage(downloadURL);
+            });
+
+
+        });
+
+        function fixBinary(bin) {
+            var length = bin.length;
+            var buf = new ArrayBuffer(length);
+            var arr = new Uint8Array(buf);
+            for (var i = 0; i < length; i++) {
+                arr[i] = bin.charCodeAt(i);
+            }
+            return buf;
+        }
+
+    }
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+    function subirImagen(data) {
+        // Replace ctrlq with your own API key
+        var apiUrl = 'https://api.imgur.com/3/image';
+        var apiKey = '73bc96366a0f24a';
+
+        var formData = new FormData();
+        formData.append("image", data);
+        console.log(formData);
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": apiUrl,
+            "method": "POST",
+            "datatype": "json",
+            "headers": {
+                "Authorization": "Client-ID " + apiKey
+            },
+            "processData": false,
+            "contentType": false,
+            "data": formData,
+            beforeSend: function(xhr) {
+                console.log("Uploading | 上传中");
+            },
+            success: function(res) {
+                //$('body').append('<img src="' + res.data.link + '" />');
+                //myMethod(res.data.link);
+                processImage(res.data.link);
+            },
+            error: function() {
+                alert("Failed | 上传失败");
+
+            }
+        }
+        $.ajax(settings).done(function(response) {
+            console.log("Done | 成功");
+        });
+    }
+</script>
+<script>
+    // used for example purposes
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // create initial empty chart
+    var datos = [];
+    var datos1 = [];
+    var datos2 = [];
+    var datos3 = [];
+    var datos4 = [];
+    var datos5 = [];
+    var ctx_live = document.getElementById("myChart");
+    console.log(document.getElementById("chFelicidad1").checked);
+    var myChart = new Chart(ctx_live, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                data: [],
+                borderWidth: 1,
+                borderColor: '#ffff00',
+                hidden: document.getElementById("chFelicidad1").checked,
+                label: 'Felicidad',
+            }, {
+                label: 'Enfado',
+                borderColor: '#B2ffff',
+                data: [],
+            }, {
+                label: 'Sorpresa',
+                hidden: document.getElementById("chEnfado1").checked,
+                borderColor: '#ff0000',
+                data: [],
+            }, {
+                label: 'Temor',
+                hidden: document.getElementById("chSorpresa1").checked,
+                borderColor: '#ff0080',
+                data: [],
+            }, {
+                label: 'Tristeza',
+                borderColor: '#9c9c9c',
+                data: [],
+            }, {
+                label: 'Neutral',
+                borderColor: '#008f39',
+                data: [],
+            }]
+        },
+
+
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                //text: "Chart.js - Dynamically Update Chart Via Ajax Requests",
+            },
+            legend: {
+                display: false
+            },
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        }
+    });
+
+    //Evento 
+    ctx_live.addEventListener('click',
+        function(e) {
+            console.log('Hola');
+            myChart.data.datasets[0].setVisible = false;
+            //tooltips: {enabled: false},
+            //myChart.data.datasets[0].setVisible=false;
+        },
+        false);
+    // this post id drives the example data
+    var postId = 1;
+
+    // logic to get new data
+    //var getData = function() {
+    function getData(emotions) {
+        $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/posts/' + postId + '/comments',
+            success: function(data) {
+
+                // process your data to pull out what you plan to use to update the chart
+                // e.g. new label and a new data point
+
+                // add new label and data point to chart's underlying data structures
+
+                //Agregando nuevos elementos
+                myChart.datasetOverride = [{}, {
+                    hidden: document.getElementById("chFelicidad1").checked,
+                }];
+
+                console.log("graficadora corre");
+                //$("#responseTextArea").val(JSON.stringify(emotions));
+
+                if (emotions[0].faceAttributes.emotion !== undefined) {
+                    var today = new Date();
+                    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    myChart.data.labels.push(time);
+
+                    console.log(emotions[0].faceAttributes.emotion);
+
+                    myChart.data.datasets[0].data.push(emotions[0].faceAttributes.emotion.happiness);
+                    myChart.data.datasets[1].data.push(emotions[0].faceAttributes.emotion.anger);
+                    myChart.data.datasets[2].data.push(emotions[0].faceAttributes.emotion.surprise);
+                    myChart.data.datasets[3].data.push(emotions[0].faceAttributes.emotion.fear);
+                    myChart.data.datasets[4].data.push(emotions[0].faceAttributes.emotion.sadness);
+                    myChart.data.datasets[5].data.push(emotions[0].faceAttributes.emotion.neutral);
+                    if (myChart.data.labels.length > 10) {
+                        //Quitando un elemto de la tabla sin la necesidad de quitar otros
+                        myChart.data.labels.shift();
+                        //Quitando un elemto de la tabla X
+                        myChart.data.datasets[0].data.shift();
+                        myChart.data.datasets[1].data.shift();
+                        myChart.data.datasets[2].data.shift();
+                        myChart.data.datasets[3].data.shift();
+                        myChart.data.datasets[4].data.shift();
+                        myChart.data.datasets[5].data.shift();
+                    }
+                    // re-render the chart
+                    //console.log(myChart.data.datasets[0].data);
+                    myChart.update();
+                }
+
+            }
+        });
+    };
+    //eventos de la grafica
+    //google.vis
+    function showContentF1() {
+        element = document.getElementById("felicidadP1");
+        check = document.getElementById("chFelicidad1");
+
+        if (check.checked) {
+
+            datos = myChart.data.datasets[0].data;
+            myChart.data.datasets[0].data = [];
+            bandera = false;
+
+        } else {
+            myChart.data.datasets[0].data = datos;
+        }
+    }
+
+    function showContentE1() {
+        element = document.getElementById("enfadoP1");
+        check = document.getElementById("chEnfado1");
+
+        if (check.checked) {
+            datos1 = myChart.data.datasets[1].data;
+            myChart.data.datasets[1].data = [];
+            bandera = false;
+
+        } else {
+            myChart.data.datasets[1].data = datos1;
+        }
+    }
+
+    function showContentS1() {
+        element = document.getElementById("sorpresaP1");
+        check = document.getElementById("chSorpresa1");
+
+        if (check.checked) {
+            datos2 = myChart.data.datasets[2].data;
+            myChart.data.datasets[2].data = [];
+            bandera = false;
+        } else {
+            myChart.data.datasets[2].data = datos2;
+        }
+    }
+
+    function showContentT1() {
+        element = document.getElementById("temorP1");
+        check = document.getElementById("chTemor1");
+
+        if (check.checked) {
+            datos3 = myChart.data.datasets[3].data;
+            myChart.data.datasets[3].data = [];
+            bandera = false;
+        } else {
+            myChart.data.datasets[3].data = datos3;
+        }
+    }
+
+    function showContentTr() {
+        element = document.getElementById("tristezaP1");
+        check = document.getElementById("chTristeza");
+
+        if (check.checked) {
+            datos4 = myChart.data.datasets[4].data;
+            myChart.data.datasets[4].data = [];
+            bandera = false;
+        } else {
+            myChart.data.datasets[4].data = datos4;
+        }
+    }
+
+    function showContentV() {
+        element = document.getElementById("verguenzaP1");
+        check = document.getElementById("chVerguenza");
+
+        if (check.checked) {
+            datos5 = myChart.data.datasets[5].data;
+            myChart.data.datasets[5].data = [];
+            bandera = false;
+        } else {
+            myChart.data.datasets[5].data = datos5;
+        }
+    }
+
+    function updateChart() {
+        // chart.data.datasets[0].data= newdata;
+        // chart.data.datasets[1].data= newdata1;
+        // chart.data.label=[2, 15, 25, 12, 20, 20, 15];
+        //  myChart.data.datasets[0].data = null;
+        //bandera = false;
+    }
+    // get new data every 3 seco
+    //setInterval(getData, 3000);
+</script>
+
+</html>
